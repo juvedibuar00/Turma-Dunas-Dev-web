@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - Meu Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">J F C</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contato -->
+  <section id="contato" class="contato section">
+    <h2>Entre em Contato</h2>
+    <p>Escolha a melhor forma de falar comigo:</p>
+
+    <div class="contato-cards">
+      <a href="mailto:seuemail@exemplo.com" class="contato-card">
+        <div style="background-color: #0a66c2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: transform 0.3s;">
+          <i class="fa-solid fa-envelope" style="color: #fff; font-size: 1.8rem;"></i>
+        </div>
+        <span>E-mail</span>
+      </a>
+      <a href="https://www.linkedin.com/in/seuperfil/" target="_blank" class="contato-card">
+        <div style="background-color: #0a66c2; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: transform 0.3s;">
+          <i class="fa-brands fa-linkedin" style="color: #fff; font-size: 1.8rem;"></i>
+        </div>
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://wa.me/5585997822831?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank" class="contato-card">
+        <div style="background-color: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; transition: transform 0.3s;">
+          <i class="fa-brands fa-whatsapp" style="color: #fff; font-size: 1.8rem;"></i>
+        </div>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <h3>Ou envie sua mensagem:</h3>
+    <!-- Formspree com redirecionamento -->
+    <form action="https://formspree.io/f/mwpnaljg" method="POST" class="contact-form">
+      <input type="text" name="nome" placeholder="Seu Nome" required>
+      <input type="email" name="email" placeholder="Seu Email" required>
+      <textarea name="mensagem" placeholder="Sua Mensagem" rows="5" required></textarea>
+      <!-- Redirecionamento após envio -->
+      <input type="hidden" name="_next" value="obrigado.html">
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+    <div class="social-footer">
+      <a href="mailto:seuemail@exemplo.com">
+        <div style="background-color: #0a66c2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-solid fa-envelope" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/juvenaldo-florentino-canja-95901832b/" target="_blank">
+        <div style="background-color: #0a66c2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-brands fa-linkedin" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+      <a href="https://wa.me/5585997822831?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">
+        <div style="background-color: #25D366; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-brands fa-whatsapp" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Hover efeito -->
+  <script>
+    const circles = document.querySelectorAll('.contato-card div, .social-footer div');
+    circles.forEach(c => {
+      c.addEventListener('mouseover', () => c.style.transform = 'scale(1.2)');
+      c.addEventListener('mouseout', () => c.style.transform = 'scale(1)');
+    });
+  </script>
+</body>
+</html>

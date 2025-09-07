@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre - Meu Portfólio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">J F C</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" class="active">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Sobre -->
+  <section id="sobre" class="sobre section">
+    <h2>Sobre Mim</h2>
+    <p>
+      Sou apaixonado por tecnologia e design digital. Minha jornada começou com HTML e CSS,
+      evoluindo para frameworks modernos e projetos criativos.  
+    </p>
+    <p>
+      Atualmente, atuo como desenvolvedor front-end, criando experiências digitais responsivas,
+      acessíveis e inovadoras.  
+    </p>
+    <p>
+      Além disso, compartilho conhecimento em sala de aula como professor na área de TI, 
+      abordando programação, cloud, inteligência artificial e muito mais.
+    </p>
+  </section>
+
+  <!-- Footer Moderno -->
+  <footer>
+    <p>&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+    <div class="social-footer">
+      <!-- E-mail -->
+      <a href="mailto:seuemail@exemplo.com">
+        <div style="background-color: #0a66c2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-solid fa-envelope" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/juvenaldo-florentino-canja-95901832b/" target="_blank">
+        <div style="background-color: #0a66c2; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-brands fa-linkedin" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5585997822831?text=Olá!%20Gostaria%20de%20entrar%20em%20contato." target="_blank">
+        <div style="background-color: #25D366; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s;">
+          <i class="fa-brands fa-whatsapp" style="color: #fff; font-size: 1.5rem;"></i>
+        </div>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Hover efeito zoom para todos os círculos -->
+  <script>
+    const circles = document.querySelectorAll('.social-footer div');
+    circles.forEach(c => {
+      c.addEventListener('mouseover', () => c.style.transform = 'scale(1.2)');
+      c.addEventListener('mouseout', () => c.style.transform = 'scale(1)');
+    });
+  </script>
+</body>
+</html>

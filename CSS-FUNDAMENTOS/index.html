@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo CSS Completo</title>
+  <style>
+    /* ======== ESTILOS GERAIS ======== */
+   html, .copo {
+      font-family: Arial, sans-serif; /* fonte geral */
+      margin: 0; /* remove margens padrão */
+      background: linear-gradient(to right, #022720, #9face6); /* gradiente CSS3 */
+    }
+      .corpo {
+      flex: 1; /* ocupa todo o espaço disponível */
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    /* ======== CABEÇALHO ======== */
+    header {
+      background-color: #222; /* cor de fundo */
+      color: white; /* cor do texto */
+      text-align: center; /* centraliza o texto */
+      padding: 20px; /* espaçamento interno */
+    }
+
+    header h1 {
+      margin: 0; /* remove a margem do título */
+      text-shadow: 2px 2px 5px black; /* sombra no texto (CSS3) */
+    }
+
+    /* ======== CONTEÚDO PRINCIPAL ======== */
+    .card {
+      background: white;
+      width: 300px;
+      margin: 20px auto; /* centraliza horizontalmente */
+      padding: 20px;
+      border-radius: 15px; /* bordas arredondadas (CSS3) */
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.2); /* sombra (CSS3) */
+      transition: transform 0.3s; /* animação suave ao passar o mouse */
+    }
+
+    .card:hover {
+      transform: scale(1.05); /* aumenta o tamanho no hover */
+    }
+
+    /* ======== TEXTO DESTACADO COM CLASSE ======== */
+    .destaque {
+      color: crimson; /* cor vermelha */
+      font-weight: bold; /* texto em negrito */
+    }
+
+    /* ======== RODAPÉ COM ID ======== */
+    #rodape {
+      background: #111;
+      color: #eee;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body class="corpo">
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>Meu Site de Exemplo</h1>
+    <p class="destaque">Aprendendo CSS na prática!</p>
+  </header>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <section class="card">
+    <h2>O que é CSS?</h2>
+    <p>O <span class="destaque">CSS</span> é uma linguagem que define a apresentação de páginas HTML.</p>
+    <p>Com ele, podemos mudar <b>cores</b>, <i>tamanhos</i>, <u>posicionamento</u> e muito mais.</p>
+  </section>
+  
+  <main class="corpo">
+    <p>Se o conteúdo for curto, o rodapé fica no final da tela.</p>
+    <p>Se o conteúdo for longo, o rodapé vai aparecer depois do conteúdo.</p>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer id="rodape">
+    © 2025 - Desenvolvido como exemplo de estudo.
+  </footer>
+</body>
+</html>
