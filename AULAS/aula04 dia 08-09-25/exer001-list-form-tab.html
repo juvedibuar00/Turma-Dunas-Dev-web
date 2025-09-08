@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de HTML - Tabelas, Listas e Formulários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        table, th, td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        table {
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, textarea, select, button {
+            margin-top: 5px;
+            padding: 8px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .exercicio {
+            background: #eef;
+            border: 1px dashed #336;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aula de HTML - Tabelas, Listas e Formulários</h1>
+    <p>Nesta página, vamos aprender sobre três elementos muito importantes em HTML: <strong>tabelas</strong>, <strong>listas</strong> e <strong>formulários</strong>. Também veremos alguns atributos comuns como <code>id</code>, <code>class</code>, <code>name</code>, <code>placeholder</code>, entre outros.</p>
+
+    <hr>
+
+    <h2>1. Tabelas</h2>
+    <p>São usadas para organizar dados em linhas e colunas. São compostas principalmente pelas tags <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code> (linha), <code>&lt;th&gt;</code> (cabeçalho) e <code>&lt;td&gt;</code> (célula).</p>
+
+    <h3>Atributos comuns em tabelas:</h3>
+    <ul>
+        <li><code>border</code>: define a espessura da borda (hoje em dia é mais usado via CSS).</li>
+        <li><code>cellpadding</code> e <code>cellspacing</code>: espaçamento interno e externo das células (também substituídos por CSS).</li>
+        <li><code>class</code> e <code>id</code>: usados para aplicar estilos ou identificar a tabela.</li>
+    </ul>
+
+    <h3>Exemplo de Tabela:</h3>
+    <table id="tabela-exemplo" class="tabela-basica">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Cidade</th>
+        </tr>
+        <tr>
+            <td>Ana</td>
+            <td>20</td>
+            <td>São Paulo</td>
+        </tr>
+        <tr>
+            <td>João</td>
+            <td>25</td>
+            <td>Rio de Janeiro</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>2. Listas</h2>
+    <p>As listas ajudam a organizar informações em tópicos. Existem três tipos principais:</p>
+    <ul>
+        <li><strong>Lista não ordenada</strong> (<code>&lt;ul&gt;</code>): os itens são marcados com pontos.</li>
+        <li><strong>Lista ordenada</strong> (<code>&lt;ol&gt;</code>): os itens são numerados.</li>
+        <li><strong>Lista de definição</strong> (<code>&lt;dl&gt;</code>): usada para termos e suas descrições.</li>
+    </ul>
+
+    <h3>Atributos comuns em listas:</h3>
+    <ul>
+        <li><code>type</code>: em listas ordenadas, pode definir o estilo da numeração (1, A, a, I, i).</li>
+        <li><code>class</code> e <code>id</code>: usados para aplicar estilos e identificar a lista.</li>
+    </ul>
+
+    <h3>Exemplo de Lista Não Ordenada:</h3>
+    <ul id="lista-ul">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <h3>Exemplo de Lista Ordenada:</h3>
+    <ol id="lista-ol" type="A">
+        <li>Estudar HTML</li>
+        <li>Praticar com exemplos</li>
+        <li>Criar projetos</li>
+    </ol>
+
+    <h3>Exemplo de Lista de Definição:</h3>
+    <dl id="lista-definicao">
+        <dt>HTML</dt>
+        <dd>Linguagem de marcação para estruturar páginas web.</dd>
+        <dt>CSS</dt>
+        <dd>Usado para estilizar páginas web.</dd>
+        <dt>JavaScript</dt>
+        <dd>Linguagem de programação para adicionar interatividade.</dd>
+    </dl>
+
+    <hr>
+
+    <h2>3. Formulários</h2>
+    <p>Os formulários permitem a interação com o usuário, coletando dados como textos, escolhas e mensagens. A tag principal é <code>&lt;form&gt;</code>, e dentro dela usamos <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code> e <code>&lt;button&gt;</code>.</p>
+
+    <h3>Atributos comuns em formulários:</h3>
+    <ul>
+        <li><code>action</code>: define o destino (URL) para onde os dados serão enviados.</li>
+        <li><code>method</code>: define o método de envio (<code>GET</code> ou <code>POST</code>).</li>
+        <li><code>name</code>: identifica o campo dentro do formulário.</li>
+        <li><code>id</code>: identifica unicamente o elemento.</li>
+        <li><code>placeholder</code>: mostra um texto de ajuda dentro do campo.</li>
+        <li><code>value</code>: define um valor inicial para o campo.</li>
+        <li><code>required</code>: torna o preenchimento obrigatório.</li>
+    </ul>
+
+    <h3>Exemplo de Formulário:</h3>
+    <form id="form-exemplo" action="#" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="1">
+
+        <label for="cidade">Cidade:</label>
+        <select id="cidade" name="cidade">
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Belo Horizonte</option>
+        </select>
+
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite sua mensagem..."></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+    <h2>4. Exercícios Práticos</h2>
+    <div class="exercicio">
+        <h3>Exercício 1 - Tabela</h3>
+        <p>Crie uma tabela com 3 colunas: <em>Produto</em>, <em>Preço</em> e <em>Quantidade</em>. Adicione pelo menos 3 linhas de produtos diferentes.</p>
+    </div>
+
+    <div class="exercicio">
+        <h3>Exercício 2 - Lista</h3>
+        <p>Crie uma lista ordenada mostrando os passos para cozinhar uma receita simples. Use o atributo <code>type</code> para mudar o estilo da numeração.</p>
+    </div>
+
+    <div class="exercicio">
+        <h3>Exercício 3 - Formulário</h3>
+        <p>Monte um formulário de cadastro com os seguintes campos:</p>
+        <ul>
+            <li>Nome completo (campo de texto obrigatório)</li>
+            <li>Email (campo de email obrigatório)</li>
+            <li>Senha (campo do tipo password obrigatório)</li>
+            <li>Gênero (campo de seleção com opções Masculino/Feminino/Outro)</li>
+            <li>Botão de envio</li>
+        </ul>
+    </div>
+
+</body>
+</html>
