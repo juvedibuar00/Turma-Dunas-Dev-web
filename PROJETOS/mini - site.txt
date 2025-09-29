@@ -1,0 +1,370 @@
+<!-- 
+Exercício – Desenvolvimento de um Mini Site Responsivo
+
+Crie um site simples utilizando HTML e CSS contendo as seguintes páginas:
+
+index.html – Página inicial (Home).
+
+sobre.html – Página com informações sobre a instituição/empresa fictícia.
+
+projetos.html – Página apresentando ao menos 2 projetos fictícios com título, imagem e descrição.
+
+contato.html – Página com um formulário de contato (nome, email, mensagem e botão enviar).
+
+Requisitos obrigatórios:
+
+Um menu de navegação presente em todas as páginas (com links para Home, Sobre, Projetos e Contato).
+
+Um footer (rodapé) presente em todas as páginas com direitos autorais fictícios.
+
+Utilizar CSS externo para personalização do layout.
+
+É permitido escolher livremente cores, fontes e estilos (criatividade conta ponto!).
+
+O site deve ter interação básica:
+
+Links do menu devem levar às páginas correspondentes.
+
+O formulário deve ter campos obrigatórios (mas não precisa enviar dados).
+📂 Estrutura de Pastas
+meu-site/
+│── index.html
+│── sobre.html
+│── projetos.html
+│── contato.html
+│── css/
+│    └── style.css
+│── img/
+     └── (imagens usadas nos projetos)
+ -->
+
+
+
+----------------------------------------------------ARQUIVO CSS-----------------------------------------------
+css/style.css
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+main {
+  padding: 20px;
+  min-height: 70vh;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  margin-top: 20px;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+----------------------------------------------------FIM CSS-----------------------------------------------
+
+
+--------------------------------------------------- ARQUIVO INDEX HTML --------------------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Bem-vindo ao Meu Site!</h1>
+    <p>Este é um mini site desenvolvido para o exercício de ADS. Explore os menus para conhecer mais.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Meu Site | Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+
+
+--------------------------------------------------- FIM INDEX -------------------------------------------------------------
+
+
+
+--------------------------------------------------------- ARQUIVO SOBRE -----------------------------------------------
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sobre - Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Sobre Nós</h1>
+    <p>Somos uma empresa fictícia criada para fins educacionais. Nosso objetivo é aprender desenvolvimento Web de forma prática.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Meu Site | Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+
+-------------------------------------------------------- FIM SOBRE -----------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------- ARQUIVO PROJETOS --------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos - Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Nossos Projetos</h1>
+    <h2>Projeto 1</h2>
+    <p>Descrição breve do projeto 1.</p>
+
+    <h2>Projeto 2</h2>
+    <p>Descrição breve do projeto 2.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Meu Site | Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+----------------------------------------------------------------- FIM PROJETOS ---------------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------- ARQUVO CONTATO ---------------------------------------------------------------------------------
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato - Meu Site</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="contato.html">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Entre em Contato</h1>
+    <form>
+      <label for="nome">Nome:</label><br>
+      <input type="text" id="nome" name="nome" required><br><br>
+
+      <label for="email">E-mail:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="mensagem">Mensagem:</label><br>
+      <textarea id="mensagem" name="mensagem" rows="5" required></textarea><br><br>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Meu Site | Todos os direitos reservados</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+-------------------------------------------------------------------------------------------- RESPONSIVIDADE ----------------------------------------------------------------------------------------------------------------------
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: #222;
+  color: #fff;
+  padding: 15px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* ajuda no mobile */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff9800;
+}
+
+/* ---------- MAIN ---------- */
+main {
+  padding: 20px;
+  min-height: 70vh;
+}
+
+h1, h2 {
+  margin-bottom: 15px;
+  color: #222;
+}
+
+form input, 
+form textarea, 
+form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background: #222;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #ff9800;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  margin-top: 20px;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* Celulares até 600px */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  main {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablets até 900px */
+@media (max-width: 900px) {
+  nav ul {
+    gap: 15px;
+  }
+
+  main {
+    font-size: 1rem;
+  }
+}
+
