@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Validação de Idade</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    button { padding: 10px 20px; font-size: 16px; }
+  </style>
+</head>
+<body>
+  <h1>Verificador de Idade</h1>
+  
+  <label for="idade">Digite sua idade:</label>
+  <input type="number" id="idade">
+  <button onclick="verificarIdade()">Verificar</button>
+  
+  <p id="resultado"></p>
+
+  <script>
+    function verificarIdade() {
+      // Pegar valor do input
+      const idade = document.getElementById("idade").value;
+      const resultado = document.getElementById("resultado");
+      
+      // Validar
+      if(idade === "") {
+        resultado.innerHTML = "Por favor, digite uma idade.";
+        resultado.style.color = "red";
+      } else if(idade < 0) {
+        resultado.innerHTML = "Idade inválida!";
+        resultado.style.color = "red";
+      } else if(idade < 18) {
+        resultado.innerHTML = "Você é menor de idade!";
+        resultado.style.color = "orange";
+      } else {
+        resultado.innerHTML = "Você é maior de idade!";
+        resultado.style.color = "green";
+      }
+    }
+  </script>
+</body>
+</html>

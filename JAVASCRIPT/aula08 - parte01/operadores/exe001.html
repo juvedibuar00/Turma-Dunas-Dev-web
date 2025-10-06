@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Verificar se uma pessoa pode votar
+        let idade = 20;
+        let brasileira = true;
+        let analfabeto = false;
+
+        let podeVotar = idade >= 16 && brasileira && !analfabeto;
+        console.log(podeVotar); // true
+
+        // Cálculo com múltiplos operadores
+        let a = 10, b = 3, c = 5;
+        let resultado = (a + b) * c; // (10 + 3) * 5 = 65
+        let ehPar = resultado % 2 === 0; // 65 % 2 = 1, então false
+    </script>
+</body>
+</html>

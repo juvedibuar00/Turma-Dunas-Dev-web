@@ -1,0 +1,8 @@
+O que é o DOM (Document Object Model)
+O que é: O DOM é uma representação em árvore da estrutura HTML da página, que permite ao JavaScript acessar e manipular elementos.
+
+Por que é importante: É a ponte entre o HTML/CSS e o JavaScript, permitindo criar páginas dinâmicas e interativas.
+
+Quando usar: Sempre que precisar alterar conteúdo, estilo ou estrutura da página em resposta a ações do usuário.
+
+Analogia: O DOM é como a planta de uma casa - você pode mudar a cor das paredes, rearrumar os móveis ou até construir novos cômodos sem modificar a estrutura original.

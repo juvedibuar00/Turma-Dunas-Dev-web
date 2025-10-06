@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operadores Lógicos</title>
+</head>
+<body>
+    <script>
+        // E lógico (&&) - retorna true se AMBOS forem true
+        console.log(true && true);    // true
+        console.log(true && false);   // false
+        console.log(false && true);   // false
+        console.log(false && false);  // false
+
+        // Exemplo prático:
+        let idade = 25;
+        let temCarteira = true;
+        let podeDirigir = idade >= 18 && temCarteira; // true
+
+        // OU lógico (||) - retorna true se PELO MENOS UM for true
+        console.log(true || true);    // true
+        console.log(true || false);   // true
+        console.log(false || true);   // true
+        console.log(false || false);  // false
+
+        // Exemplo prático:
+        let temDinheiro = false;
+        let temCartao = true;
+        let podeComprar = temDinheiro || temCartao; // true
+
+        // NÃO lógico (!) - inverte o valor booleano
+        console.log(!true);      // false
+        console.log(!false);     // true
+        console.log(!(5 > 3));   // false (5 > 3 é true, !true é false)
+
+        // Exemplo prático:
+        let estaChovendo = true;
+        let naoEstaChovendo = !estaChovendo; // false
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var nome = "João"; // Pode ser redeclarada
+        let idade = 30;    // Não pode ser redeclarada no mesmo escopo
+        const PI = 3.14;   // Valor fixo, não pode mudar
+
+        // Teste:
+        nome = "Maria"; // Permitido
+        idade = 31;     // Permitido
+        // PI = 3.15;   // ERRO! Constante não pode ser alterada
+
+        /*
+
+        Diferenças:
+        var vaza o escopo (pode causar bugs)
+        let e const são mais seguras
+        Prefira const para valores fixos e let para variáveis que mudam
+        */
+
+
+    </script>
+</body>
+</html>

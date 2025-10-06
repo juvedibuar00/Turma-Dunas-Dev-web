@@ -1,0 +1,14 @@
+O que é uma função (conceito e sintaxe)
+O que é: Uma função é um bloco de código reutilizável que executa uma tarefa específica.
+
+Por que é importante: Evita repetição de código, organiza o programa e facilita a manutenção.
+
+Quando usar: Sempre que você precisar executar o mesmo código em diferentes partes do programa.
+
+Sintaxe básica:
+
+javascript
+function nomeDaFuncao(parametros) {
+  // código a ser executado
+  return resultado; // opcional
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário - Turma DEV - DUNAS</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contador {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .feedback {
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .valido {
+            color: #28a745;
+            display: block;
+        }
+
+        .invalido {
+            color: #dc3545;
+            display: block;
+        }
+
+        .campo-valido {
+            border-color: #28a745;
+        }
+
+        .campo-invalido {
+            border-color: #dc3545;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .senha-forca {
+            margin-top: 10px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: #ddd;
+            overflow: hidden;
+        }
+
+        .forca-barra {
+            height: 100%;
+            width: 0%;
+            transition: all 0.3s ease;
+        }
+
+        .fraca { background-color: #dc3545; width: 25%; }
+        .media { background-color: #ffc107; width: 50%; }
+        .forte { background-color: #28a745; width: 75%; }
+        .muito-forte { background-color: #20c997; width: 100%; }
+
+        .resultado {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            display: none;
+        }
+
+        .resultado.mostrar {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulário TURMA DEV</h1>
+        
+        <form id="meuFormulario">
+            <div class="form-group">
+                <label for="nome">Nome completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome completo">
+                <div class="feedback" id="nomeFeedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="seu@email.com">
+                <div class="feedback" id="emailFeedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Crie uma senha segura">
+                <div class="senha-forca">
+                    <div class="forca-barra" id="forcaSenha"></div>
+                </div>
+                <div class="feedback" id="senhaFeedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" placeholder="Digite sua mensagem..."></textarea>
+                <div class="contador">
+                    <span id="contadorCaracteres">0</span>/200
+                </div>
+                <div class="feedback" id="mensagemFeedback"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria">
+                    <option value="">Selecione uma categoria</option>
+                    <option value="duvida">Dúvida</option>
+                    <option value="sugestao">Sugestão</option>
+                    <option value="reclamacao">Reclamação</option>
+                    <option value="elogio">Elogio</option>
+                </select>
+                <div class="feedback" id="categoriaFeedback"></div>
+            </div>
+
+            <button type="submit" class="btn">Enviar formulário</button>
+        </form>
+
+        <div class="resultado" id="resultado"></div>
+    </div>
+
+    <script>
+        // Selecionar elementos
+        const formulario = document.getElementById('meuFormulario');
+        const resultado = document.getElementById('resultado');
+        const contadorCaracteres = document.getElementById('contadorCaracteres');
+        const forcaSenha = document.getElementById('forcaSenha');
+
+        // Validar nome em tempo real
+        document.getElementById('nome').addEventListener('input', function(e) {
+            const nome = e.target.value;
+            const feedback = document.getElementById('nomeFeedback');
+            
+            if (nome.length < 2) {
+                mostrarFeedback(feedback, 'Nome muito curto', false);
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{2,}$/.test(nome)) {
+                mostrarFeedback(feedback, 'Use apenas letras e espaços', false);
+            } else {
+                mostrarFeedback(feedback, 'Nome válido', true);
+            }
+        });
+
+        // Validar email em tempo real
+        document.getElementById('email').addEventListener('input', function(e) {
+            const email = e.target.value;
+            const feedback = document.getElementById('emailFeedback');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email === '') {
+                limparFeedback(feedback);
+            } else if (!emailRegex.test(email)) {
+                mostrarFeedback(feedback, 'Formato de email inválido', false);
+            } else {
+                mostrarFeedback(feedback, 'Email válido', true);
+            }
+        });
+
+        // Analisar força da senha
+        document.getElementById('senha').addEventListener('input', function(e) {
+            const senha = e.target.value;
+            const feedback = document.getElementById('senhaFeedback');
+            const forca = calcularForcaSenha(senha);
+            
+            // Atualizar barra de força
+            forcaSenha.className = 'forca-barra ' + forca.classe;
+            
+            if (senha === '') {
+                limparFeedback(feedback);
+            } else if (senha.length < 6) {
+                mostrarFeedback(feedback, 'Senha muito curta (mínimo 6 caracteres)', false);
+            } else {
+                mostrarFeedback(feedback, forca.mensagem, forca.valida);
+            }
+        });
+
+        // Contador de caracteres para mensagem
+        document.getElementById('mensagem').addEventListener('input', function(e) {
+            const mensagem = e.target.value;
+            const feedback = document.getElementById('mensagemFeedback');
+            contadorCaracteres.textContent = mensagem.length;
+            
+            if (mensagem.length > 200) {
+                mostrarFeedback(feedback, 'Máximo de 200 caracteres excedido', false);
+            } else if (mensagem.length > 150) {
+                mostrarFeedback(feedback, `${200 - mensagem.length} caracteres restantes`, true);
+            } else {
+                limparFeedback(feedback);
+            }
+        });
+
+        // Validar categoria
+        document.getElementById('categoria').addEventListener('change', function(e) {
+            const categoria = e.target.value;
+            const feedback = document.getElementById('categoriaFeedback');
+            
+            if (categoria === '') {
+                mostrarFeedback(feedback, 'Selecione uma categoria', false);
+            } else {
+                mostrarFeedback(feedback, 'Categoria selecionada', true);
+            }
+        });
+
+        // Envio do formulário
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar todos os campos
+            const nomeValido = validarCampo('nome');
+            const emailValido = validarCampo('email');
+            const senhaValida = validarCampo('senha');
+            const mensagemValida = validarCampo('mensagem');
+            const categoriaValida = validarCampo('categoria');
+            
+            if (nomeValido && emailValido && senhaValida && mensagemValida && categoriaValida) {
+                // Simular envio bem-sucedido
+                const dados = {
+                    nome: document.getElementById('nome').value,
+                    email: document.getElementById('email').value,
+                    categoria: document.getElementById('categoria').value,
+                    mensagem: document.getElementById('mensagem').value
+                };
+                
+                mostrarResultado(dados);
+                formulario.reset();
+                contadorCaracteres.textContent = '0';
+                forcaSenha.className = 'forca-barra';
+                
+                // Limpar todos os feedbacks
+                document.querySelectorAll('.feedback').forEach(fb => limparFeedback(fb));
+            } else {
+                resultado.innerHTML = '<p style="color: #dc3545;">❌ Corrija os erros antes de enviar.</p>';
+                resultado.classList.add('mostrar');
+            }
+        });
+
+        // Funções auxiliares
+        function mostrarFeedback(elemento, mensagem, valido) {
+            elemento.textContent = mensagem;
+            elemento.className = `feedback ${valido ? 'valido' : 'invalido'}`;
+            elemento.previousElementSibling.className = valido ? 'campo-valido' : 'campo-invalido';
+        }
+
+        function limparFeedback(elemento) {
+            elemento.className = 'feedback';
+            elemento.previousElementSibling.className = '';
+        }
+
+        function validarCampo(campoId) {
+            const campo = document.getElementById(campoId);
+            const valor = campo.value.trim();
+            
+            switch(campoId) {
+                case 'nome':
+                    return valor.length >= 2 && /^[a-zA-ZÀ-ÿ\s]{2,}$/.test(valor);
+                case 'email':
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor);
+                case 'senha':
+                    return valor.length >= 6;
+                case 'mensagem':
+                    return valor.length > 0 && valor.length <= 200;
+                case 'categoria':
+                    return valor !== '';
+                default:
+                    return false;
+            }
+        }
+
+        function calcularForcaSenha(senha) {
+            let forca = 0;
+            
+            if (senha.length >= 6) forca++;
+            if (senha.length >= 8) forca++;
+            if (/[A-Z]/.test(senha)) forca++;
+            if (/[0-9]/.test(senha)) forca++;
+            if (/[^A-Za-z0-9]/.test(senha)) forca++;
+            
+            const niveis = [
+                { classe: 'fraca', mensagem: 'Senha fraca', valida: false },
+                { classe: 'fraca', mensagem: 'Senha fraca', valida: false },
+                { classe: 'media', mensagem: 'Senha média', valida: true },
+                { classe: 'forte', mensagem: 'Senha forte', valida: true },
+                { classe: 'muito-forte', mensagem: 'Senha muito forte', valida: true },
+                { classe: 'muito-forte', mensagem: 'Senha muito forte', valida: true }
+            ];
+            
+            return niveis[forca] || niveis[0];
+        }
+
+        function mostrarResultado(dados) {
+            resultado.innerHTML = `
+                <h3>✅ Formulário Enviado com Sucesso!</h3>
+                <p><strong>Nome:</strong> ${dados.nome}</p>
+                <p><strong>Email:</strong> ${dados.email}</p>
+                <p><strong>Categoria:</strong> ${dados.categoria}</p>
+                <p><strong>Mensagem:</strong> ${dados.mensagem}</p>
+                <p style="margin-top: 15px; color: #28a745;">Obrigado pelo seu contato! Responderemos em breve.</p>
+            `;
+            resultado.classList.add('mostrar');
+            
+            // Ocultar resultado após 5 segundos
+            setTimeout(() => {
+                resultado.classList.remove('mostrar');
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

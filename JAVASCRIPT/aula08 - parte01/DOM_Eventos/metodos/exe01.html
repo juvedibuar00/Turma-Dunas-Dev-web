@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Selecionando Elementos</title>
+</head>
+<body>
+    <h1 id="titulo">Título Principal</h1>
+    <p class="destaque">Primeiro parágrafo</p>
+    <p class="destaque">Segundo parágrafo</p>
+    <p>Parágrafo normal</p>
+    
+    <script>
+        // Diferentes formas de seleção
+        const titulo = document.getElementById('titulo');
+        const destaqueClassic = document.getElementsByClassName('destaque');
+        const destaqueModern = document.querySelectorAll('.destaque');
+        const primeiroDestaque = document.querySelector('.destaque');
+        
+        console.log(titulo); // Elemento h1
+        console.log(destaqueClassic); // HTMLCollection (2 elementos)
+        console.log(destaqueModern); // NodeList (2 elementos)
+        console.log(primeiroDestaque); // Primeiro elemento .destaque
+    </script>
+</body>
+</html>

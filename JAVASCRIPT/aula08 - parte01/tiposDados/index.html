@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipo de dados</title>
+</head>
+<body>
+    
+    <script>
+
+        let nome = "Ana";          // string
+        let idade = 25;            // number
+        let casado = false;        // boolean
+        let endereco = null;       // null
+        let telefone;              // undefined
+        console.log(typeof nome);     // "string"
+        console.log(typeof idade);    // "number"
+        console.log(typeof casado);   // "boolean"
+        console.log(typeof endereco); // "object" (atenção: isso é um conhecido bug do JS)
+        console.log(typeof telefone); // "undefined"
+    </script>
+</body>
+</html>

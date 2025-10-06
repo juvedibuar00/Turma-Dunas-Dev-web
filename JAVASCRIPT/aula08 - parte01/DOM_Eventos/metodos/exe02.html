@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alterando Conteúdo</title>
+    <style>
+        .destaque { 
+            background-color: yellow; 
+            padding: 10px;
+        }
+        .erro {
+            color: red;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="mensagem">Mensagem original</div>
+    <button onclick="alterarMensagem()">Alterar Mensagem</button>
+    
+    <script>
+        function alterarMensagem() {
+            const mensagem = document.getElementById('mensagem');
+            
+            // Alterar conteúdo
+            mensagem.innerHTML = '<strong>Mensagem alterada!</strong>';
+            
+            // Alterar estilo diretamente
+            mensagem.style.color = 'blue';
+            mensagem.style.fontSize = '18px';
+            
+            // Trabalhar com classes
+            mensagem.classList.add('destaque');
+            mensagem.classList.remove('erro');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Operadores Relacionais (Comparação)</title>
+</head>
+<body>
+    
+    <script>
+
+        // Igualdade simples (==) - compara valor (com conversão de tipo)
+        console.log(5 == 5);     // true
+        console.log(5 == "5");   // true (string "5" é convertida para número 5)
+        console.log(0 == false); // true
+
+        // Igualdade estrita (===) - compara valor E tipo
+        console.log(5 === 5);    // true
+        console.log(5 === "5");  // false (tipos diferentes)
+        console.log(0 === false); // false
+
+        // Diferença simples (!=)
+        console.log(5 != 3);     // true
+        console.log(5 != "5");   // false (valores são considerados iguais)
+
+        // Diferença estrita (!==)
+        console.log(5 !== "5");  // true (tipos diferentes)
+        console.log(5 !== 5);    // false
+
+        // Maior que (>)
+        console.log(10 > 5);     // true
+        console.log(5 > 10);     // false
+
+        // Menor que (<)
+        console.log(3 < 7);      // true
+        console.log(7 < 3);      // false
+
+        // Maior ou igual (>=)
+        console.log(5 >= 5);     // true
+        console.log(5 >= 3);     // true
+        console.log(5 >= 7);     // false
+
+        // Menor ou igual (<=)
+        console.log(5 <= 5);     // true
+        console.log(5 <= 7);     // true
+        console.log(5 <= 3);     // false
+    </script>
+</body>
+</html>
