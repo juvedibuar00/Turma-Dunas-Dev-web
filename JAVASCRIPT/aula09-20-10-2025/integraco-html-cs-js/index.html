@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LISTA DE TAREFAS - TURMA DEV DUNAS 2025.2</h1>
+        
+        <!-- Onde vamos digitar novas tarefas -->
+        <div class="adicionar-tarefa">
+            <input type="text" id="inputTarefa" placeholder="Digite uma tarefa...">
+            <button onclick="adicionarTarefa()">➕ Adicionar</button>
+        </div>
+        
+        <!-- Onde as tarefas vão aparecer -->
+        <ul id="listaTarefas"></ul>
+        
+        <!-- Estatísticas -->
+        <div class="estatisticas">
+            <p>Total: <span id="total">0</span> tarefas</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
